@@ -1,0 +1,33 @@
+{
+  "name": "clndr",
+  "main": "clndr.min.js",
+  "homepage": "http://kylestetz.github.io/CLNDR/",
+  "keywords": [
+    "clndr",
+    "calendar",
+    "clndrjs",
+    "templating"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.9",
+    "moment": ">=2.8.3"
+  },
+  "version": "1.2.15",
+  "_release": "1.2.15",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.15",
+    "commit": "8da939d77a39a332c578a2ff04b1c2c9a07d7311"
+  },
+  "_source": "git://github.com/kylestetz/CLNDR.git",
+  "_target": "~1.2.15",
+  "_originalSource": "clndr",
+  "_direct": true
+}
