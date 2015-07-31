@@ -4,3 +4,4 @@ node_modules
 build
 .bowery
 bowery.json
+/simple-cal/app/scripts/vendor
