@@ -6,15 +6,72 @@
     <title>Calendar</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    .clndr-grid {
+      border: 1px solid green;
+      width: 740px;
+    }
+    .day, .header-day {
+      display: inline-block;
+      width: 100px;
+      border: 1px solid green;
+    }
+    .day {
+      padding: 0.5em 3em 3em 0.5em;
+    }
+    .day.past.event {
+      background-color: #aaa;
+    }
+    </style>
   </head>
 
   <body>
 
-    
+  <h1>tech@NYU Calendar</h1>
+
     <div class="cal1">
+      <script type="text/template" id="test">
+       <div class="clndr-controls">
+
+          
+          <h1 class="month"><%= month %> <%= year %></h1>
+          <div class="clndr-previous-button">PREVIOUS</div>
+          <div class="clndr-next-button">NEXT</div>
+        </div>
+        <div class="clndr-grid">
+      <div class="days-of-the-week clearfix">
+        <% _.each(daysOfTheWeek, function(day) { %>
+          <div class="header-day"><%= day %></div>
+        <% }); %>
+      </div>
+      <div class="days clearfix">
+        <% _.each(days, function(day) { %>
+          <div class="<%= day.classes %>" id="<%= day.id %>">
+            <span class="day-number"><%= day.day %></span>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    <div class="event-listing">
+      <div class="event-listing-title">EVENTS THIS MONTH</div>
+      <% _.each(eventsThisMonth, function(event) { %>
+          <div class="event-item">
+            <div class="event-item-name"><%= event.title %></div>
+            <div class="event-item-location"><%= event.location %></div>
+          </div>
+        <% }); %>
+    </div>
+    </script>
     </div>
 
-  
+    <h3>Or <a href="http://calendar.techatnyu.org">download a .ics file</a> for your calendar app</h3>
+
      <script data-main="scripts/main" src="scripts/vendor/requirejs/require.js"></script>
   </body>
 </html>
