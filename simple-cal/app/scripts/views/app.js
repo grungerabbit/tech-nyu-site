@@ -31,7 +31,6 @@ define(['jquery', 'underscore', 'moment', 'clndr'], function($, _, moment, clndr
 		  for (var i = 0; i < nutso.length; i++) {
 		  	var currentAttr = nutso[i].attributes;
 		  	//console.log(moment(currentAttr.startDateTime).format('YYYY-MM-DD'));
-
 		  	eventArray.push(new SimpleEvent(currentAttr.startDateTime, currentAttr.endDateTime, currentAttr.title))
 		  }
 
