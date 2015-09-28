@@ -1,7 +1,11 @@
 /* Feel free to use @import. r.js will merge them, when building */
 
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
-
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
 a {
 	color: black;
 	text-decoration: none;
@@ -31,22 +35,21 @@ header p.description, .title {
 	padding: 0px 27px;
 	margin: 0;
 }
+div {
+	display: block;
+}
 .title {
 	float: right;
 }
-* {
-   box-sizing: border-box;
-   padding: 0;
-   margin: 0;
-}
 .calendar {
 	width: 100%;
+	height: 80%;
 	margin-top: 90px;
 	position: absolute;
 }
 .clndr-grid {
-   width: 100%;
-   margin: 0 auto;
+   width: 65%;
+   float: left;
    background-color: #EEEEEE;
 }
 .clearfix:after {
@@ -59,7 +62,6 @@ header p.description, .title {
 }
 .clearfix {
   display: inline-block;
-  margin: 0 auto;
 }
 html[xmlns] .clearfix {
   display: block;
@@ -76,54 +78,68 @@ html[xmlns] .clearfix {
   /* IE10+ */
 }
 .cal1 {
-  max-width: 800px;
+  max-width: 850px;
   margin: 50px auto;
   font-family: 'Droid Sans Mono';
   font-size: 14px;
 }
 .clndr-controls {
   display: inline-block;
+  text-align: center;
   width: 100%;
-  margin: 0 auto;
 }
-
-.days-of-the-week, .days {
-	width: inherit;
+.clndr-grid .days-of-the-week {
+    width: 100%;
 }
-.days-of-the-week{
-	text-align: center;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-.days {
-	padding: 20px;
-}
-.day, .header-day {
-	display: inline-block;
-	width: 100px;
+ .clndr-grid .days-of-the-week .header-day {
+    float: left;
+    width: 14.2857%;
+    padding: 14px;
+    text-align: center;
 }
 .day {
 	padding: 2em 2em 2em 2em;
-	text-align: center;
-	margin: 0 auto;
-	border-bottom: 1px solid red;
 }
-
+ .clndr-grid .days .day {
+ 	float: left;
+ 	text-align: center;
+ 	width: 14.2857%;
+   height: 66px;
+ }
 .month {
 	float: center;
 }
 .left-align {
 	float: left;
+	text-align: left;
 }
 .right-align {
 	float: right;
+	text-align: right;
 }
 .cal1 .clndr .clndr-controls .month {
-  float: center;
-  width: 100%;
   text-align: center;
+  padding: 15px;
 }
 
 .clndr-next-button, .clndr-previous-button {
 	padding: 5px;
+	width: 50px;
 }
+.event-listing {
+	float: left;
+	width: 35%;
+}
+.event-listing-title {
+	text-align: center;
+}
+.bottom {
+	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	padding: 5px;
+	text-align: center;
+   bottom: 5em;
+}
+
