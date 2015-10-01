@@ -129,9 +129,14 @@ html[xmlns] .clearfix {
 .event-listing {
 	float: left;
 	width: 35%;
+	padding-left: 10px;
 }
 .event-listing-title {
 	text-align: center;
+	margin-bottom: 10px;
+}
+.event-item {
+	padding: 5px;
 }
 .bottom {
 	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
