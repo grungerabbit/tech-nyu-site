@@ -97,14 +97,24 @@ html[xmlns] .clearfix {
     padding: 14px;
     text-align: center;
 }
+
 .day {
 	padding: 2em 2em 2em 2em;
 }
  .clndr-grid .days .day {
- 	float: left;
- 	text-align: center;
- 	width: 14.2857%;
+   float: left;
+   text-align: center;
+   width: 14.2857%;
    height: 66px;
+ }
+ .day.past{
+ 	opacity: 0.4;
+ }
+ .day.today{
+ 	background-color: white;
+ }
+ .day.event {
+ 	border: 3px solid white;
  }
 .month {
 	float: center;
@@ -137,6 +147,14 @@ html[xmlns] .clearfix {
 }
 .event-item {
 	padding: 5px;
+	border-bottom: 1px solid black;
+}
+.event-item-name {
+	padding: 5px;
+	font-size: 16px;
+}
+.event-item-description {
+	padding: 5px;
 }
 .bottom {
 	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
@@ -145,6 +163,20 @@ html[xmlns] .clearfix {
 	height: 30px;
 	padding: 5px;
 	text-align: center;
-   bottom: 5em;
 }
+@media only screen and (max-device-width: 480px) {
+	.clndr-controls, .clndr-grid {
+		display: none;
+	}
+	.event-listing {
+		width: 100%;
+		height: 80%;
+	}
+	.event-listing-title {
+		padding-top: 10px;
+	}
+	.bottom {
+		height: 20%;
+	}
 
+}

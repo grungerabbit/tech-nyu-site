@@ -32,10 +32,13 @@ define(['jquery', 'underscore', 'moment', 'clndr'], function($, _, moment, clndr
 		  //   { startDate: thisMonth + '-21', endDate: thisMonth + '-23', title: 'Another Multi-Day Event' },
 		  //   { date: thisMonth + '-01', title: 'Single Day Event' }
 		  // ];
-		 function SimpleEvent(start, end, title) {
+		 function SimpleEvent(start, end, title, description, rsvpUrl) {
 		  	this.startDate = moment(start).format('YYYY-MM-DD');
 		  	this.endDate = moment(end).format('YYYY-MM-DD');
+		  	this.description = description;
 		  	this.title = title;
+		  	this.rsvpUrl = rsvpUrl;
+		  	
 		  }
 
 		 function populateCalendar() {
@@ -44,8 +47,9 @@ define(['jquery', 'underscore', 'moment', 'clndr'], function($, _, moment, clndr
 
 		 	for (var i = 0; i < nutso.length; i++) {
 		  		var currentAttr = nutso[i].attributes;
+		  		console.log(currentAttr.rsvpUrl);
 		  		console.log(moment(currentAttr.startDateTime).format('YYYY-MM-DD'));
-		  		eventArray.push(new SimpleEvent(currentAttr.startDateTime, currentAttr.endDateTime, currentAttr.title))
+		  		eventArray.push(new SimpleEvent(currentAttr.startDateTime, currentAttr.endDateTime, currentAttr.title, currentAttr.description, currentAttr.rsvpUrl))
 		 	 }
 		 	 calendars.clndr1 = $('.cal1').clndr({
 				template: $('#test').html(),
